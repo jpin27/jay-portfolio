@@ -68,7 +68,7 @@ const LandingPage = () => (
               as="h2"
               color="primary"
               fontSize={[5, 6, 8]}
-              mb={[3, 4, 5]}
+              mb={[2, 3, 4]}
             >
               {`Hello, I'm ${name}!`}
             </Heading>
