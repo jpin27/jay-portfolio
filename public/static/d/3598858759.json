@@ -4,12 +4,12 @@
       "projects": [
         {
           "id": "172cb726-050d-52f3-9e23-aa529fe48229",
-          "name": "Facebook",
-          "description": "Facebook is a popular free social networking website that allows registered users to keep in touch with friends.",
+          "name": "Pulse YXE",
+          "description": "A Python script that gets publicly available tweets in Saskatoon and displays interesting data insights",
           "projectUrl": "http://facebook.com/",
-          "repositoryUrl": "https://github.com/facebook",
-          "publishedDate": "2004",
-          "type": "Web",
+          "repositoryUrl": "https://github.com/aicxe/pulse-yxe",
+          "publishedDate": "2017",
+          "type": "Data Analysis",
           "logo": {
             "title": "Facebook logo",
             "image": {
@@ -19,12 +19,12 @@
         },
         {
           "id": "7aa9b16d-f43f-5199-839a-89f24f1b7cdc",
-          "name": "Gatsby JS",
-          "description": " Gatsby is a React-based, GraphQL powered, static site generator. Overall think, part Jekyll, part create-react-app.",
+          "name": "Esper",
+          "description": "An Ionic mobile application that takes your selfie and estimates what emotion you're feeling. Uses the Microsoft Azure Emotion API.",
           "projectUrl": "https://www.gatsbyjs.org/",
-          "repositoryUrl": "https://github.com/gatsbyjs/gatsby",
-          "publishedDate": "2016",
-          "type": "Framework",
+          "repositoryUrl": "https://github.com/aicxe/esper",
+          "publishedDate": "2018",
+          "type": "Mobile",
           "logo": {
             "title": "Gatsby logo",
             "image": {
@@ -34,12 +34,57 @@
         },
         {
           "id": "d5b809dc-bb7b-555d-a135-ce7436b9b1b8",
-          "name": "Google",
-          "description": "It is the most-used search engine on the World Wide Web, handling more than three billion searches each day.",
+          "name": "WWWBS",
+          "description": "A CRUD-based appointment booking system created in Laravel",
           "projectUrl": "https://www.google.com/",
-          "repositoryUrl": "https://github.com/google",
-          "publishedDate": "1998",
+          "repositoryUrl": "https://github.com/aicxe/wwwbs",
+          "publishedDate": "2017",
           "type": "Web",
+          "logo": {
+            "title": "Google Logo",
+            "image": {
+              "src": "//images.ctfassets.net/nussweg0k89r/3AorRmtWOsGQ4o8gK0YWKG/65fa42a4347cc9c85f303891438df2ed/google_PNG19630.png?w=200&fl=progressive&q=100"
+            }
+          }
+        },
+        {
+          "id": "87015a98-3511-5861-8dd2-590f310d7240",
+          "name": "Shift: Beginnings",
+          "description": "The first in a series of game levels for Portal 2 that uses a teleportation mechanic ",
+          "projectUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=76286713",
+          "repositoryUrl": null,
+          "publishedDate": "2012",
+          "type": "Game Level",
+          "logo": {
+            "title": "Google Logo",
+            "image": {
+              "src": "//images.ctfassets.net/nussweg0k89r/3AorRmtWOsGQ4o8gK0YWKG/65fa42a4347cc9c85f303891438df2ed/google_PNG19630.png?w=200&fl=progressive&q=100"
+            }
+          }
+        },
+        {
+          "id": "9611f2e5-f9b8-517e-b115-48d7f65fdcb5",
+          "name": "Shift: Prelude",
+          "description": "A prequel to the Shift trilogy, a series of custom-made game levels for Portal 2",
+          "projectUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=76286713",
+          "repositoryUrl": null,
+          "publishedDate": "2012",
+          "type": "Game Level",
+          "logo": {
+            "title": "Google Logo",
+            "image": {
+              "src": "//images.ctfassets.net/nussweg0k89r/3AorRmtWOsGQ4o8gK0YWKG/65fa42a4347cc9c85f303891438df2ed/google_PNG19630.png?w=200&fl=progressive&q=100"
+            }
+          }
+        },
+        {
+          "id": "25c314dc-930d-5e7a-a93f-e55b3e967154",
+          "name": "The Accessible Social Media Policy",
+          "description": "A draft for a subset of ISO 9241-171 standards that adds guidelines for the implementation of accessibility in social media.",
+          "projectUrl": "https://www.google.com/",
+          "repositoryUrl": null,
+          "publishedDate": "2017",
+          "type": "Paper",
           "logo": {
             "title": "Google Logo",
             "image": {

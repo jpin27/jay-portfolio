@@ -3,11 +3,11 @@
     "contentfulAbout": {
       "name": "Jude Pineda",
       "roles": [
-        "Full-stack developer 👨‍💻",
-        "Buildmaster 🤖",
-        "Technical Writer ✒️",
         "Gamer 🎮",
-        "Board game collector 🎲"
+        "Technical Writer ✒️",
+        "Full-stack developer 👨‍💻",
+        "Board game collector 🎲",
+        "Buildmaster 🤖"
       ],
       "socialLinks": [
         {
