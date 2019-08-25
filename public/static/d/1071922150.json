@@ -1,0 +1,25 @@
+{
+  "data": {
+    "site": { "siteMetadata": { "isDevToUserDefined": true } },
+    "allDevArticles": {
+      "totalCount": 1,
+      "edges": [
+        {
+          "node": {
+            "article": {
+              "id": 156669,
+              "slug": "what-production-environments-can-learn-from-mcdonalds-4ipb",
+              "title": "What production environments can learn from McDonalds",
+              "positive_reactions_count": 6,
+              "comments_count": 0,
+              "created_at": "Aug 2019"
+            }
+          }
+        }
+      ]
+    },
+    "author": {
+      "article": { "user": { "name": "Jude Pineda", "username": "aicxe" } }
+    }
+  }
+}

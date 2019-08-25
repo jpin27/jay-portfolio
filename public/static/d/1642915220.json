@@ -1,0 +1,25 @@
+{
+  "data": {
+    "site": { "siteMetadata": { "isDevToUserDefined": true } },
+    "allDevArticles": {
+      "totalCount": 2,
+      "edges": [
+        {
+          "node": {
+            "article": {
+              "id": 160701,
+              "slug": "test-post-1-1jm1",
+              "title": "Test Post #1",
+              "positive_reactions_count": 5,
+              "comments_count": 0,
+              "created_at": "Aug 2019"
+            }
+          }
+        }
+      ]
+    },
+    "author": {
+      "article": { "user": { "name": "Jude Pineda", "username": "aicxe" } }
+    }
+  }
+}

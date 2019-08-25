@@ -78,7 +78,7 @@ const parsePost = author => postFromGraphql => {
 
   return {
     id,
-    title,
+    title: 'Testy title',
     date: createdAt,
     cover_image,
     url: `${DEVTO_URL}/${author.username}/${slug}`,
