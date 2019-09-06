@@ -18,8 +18,8 @@
         }
       ]
     },
-    "author": {
-      "article": { "user": { "name": "Jude Pineda", "username": "aicxe" } }
+    "devArticles": {
+      "author": { "user": { "name": "Jude Pineda", "username": "aicxe" } }
     }
   }
 }

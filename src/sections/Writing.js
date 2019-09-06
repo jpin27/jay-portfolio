@@ -74,7 +74,11 @@ Post.propTypes = {
 };
 
 const parsePost = author => postFromGraphql => {
-  const { id, slug, createdAt, title, cover_image } = postFromGraphql;
+  const { id, title, createdAt, cover_image, slug } = postFromGraphql;
+
+  // This doesn't pull the correct info.
+  // maybe a different function?
+  // console.log("ID IS " + id + " AUTHOR IS " + author.username);
 
   return {
     id,
@@ -163,7 +167,18 @@ const Writing = () => (
       }
     `}
     render={({ allDevArticles, site, author }) => {
-      const posts = edgeToArray(allDevArticles).map(parsePost(author));
+      // these work
+      // console.log("author " + author.article.user.name);
+      // console.log("dev " + allDevArticles.edges[0].node.article.title);
+
+      const posts = edgeToArray(allDevArticles).map(
+        parsePost(author.article.user),
+      );
+
+      // this works too
+      // const post1 = edgeToArray(allDevArticles);
+      // console.log("post1 " + post1[0].article.title); McDonalds
+      // console.log("post1 " + post1[1].article.title); Debug Sat
 
       const diffAmountArticles = allDevArticles.totalCount - posts.length;
       if (diffAmountArticles > 0) {
@@ -176,7 +191,6 @@ const Writing = () => (
       }
 
       const { isDevToUserDefined } = site.siteMetadata;
-
       return (
         isDevToUserDefined && (
           <Section.Container id="writing" Background={Background}>
