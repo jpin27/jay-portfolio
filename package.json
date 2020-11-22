@@ -22,12 +22,12 @@
     "PWA",
     "portfolio"
   ],
-  "author": "Ema Suriano",
+  "author": "Jude Pineda",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EmaSuriano/gatsby-starter-mate/issues"
+    "url": "https://github.com/aicxe/jay-portfolio/issues"
   },
-  "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
+  "homepage": "https://github.com/aicxe/jay-portfolio",
   "dependencies": {
     "contentful": "^7.0.3",
     "dotenv": "^7.0.0",
@@ -41,7 +41,7 @@
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-contentful": "^2.0.52",
-    "gatsby-source-medium": "^2.0.7",
+    "gatsby-source-dev": "^0.1.4",
     "gatsby-transformer-remark": "^2.3.10",
     "inquirer": "^6.2.0",
     "prop-types": "^15.6.2",

@@ -10,8 +10,7 @@ import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 
-const MEDIUM_CDN = 'https://cdn-images-1.medium.com/max/400';
-const MEDIUM_URL = 'https://medium.com';
+const DEVTO_URL = 'https://dev.to';
 
 const Background = () => (
   <div>
@@ -53,7 +52,7 @@ const EllipsisHeading = styled(Heading)`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
-const Post = ({ title, text, image, url, date, time }) => (
+const Post = ({ title, text, image, url, date }) => (
   <Card onClick={() => window.open(url, '_blank')} pb={4}>
     <EllipsisHeading m={3} p={1}>
       {title}
@@ -61,7 +60,7 @@ const Post = ({ title, text, image, url, date, time }) => (
     {image && <CoverImage src={image} height="200px" alt={title} />}
     <Text m={3}>{text}</Text>
     <ImageSubtitle bg="primary" color="white" x="right" y="bottom" round>
-      {`${date} - ${Math.ceil(time)} min`}
+      {`${date}`}
     </ImageSubtitle>
   </Card>
 );
@@ -72,30 +71,28 @@ Post.propTypes = {
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
 };
 
 const parsePost = author => postFromGraphql => {
-  const { id, uniqueSlug, createdAt, title, virtuals } = postFromGraphql;
-  const image =
-    virtuals.previewImage.imageId &&
-    `${MEDIUM_CDN}/${virtuals.previewImage.imageId}`;
+  const { id, title, createdAt, cover_image, slug } = postFromGraphql;
+
+  // This doesn't pull the correct info.
+  // maybe a different function?
+  // console.log("ID IS " + id + " AUTHOR IS " + author.username);
 
   return {
     id,
-    title,
-    time: virtuals.readingTime,
+    title: 'Testy title',
     date: createdAt,
-    text: virtuals.subtitle,
-    image,
-    url: `${MEDIUM_URL}/${author.username}/${uniqueSlug}`,
+    cover_image,
+    url: `${DEVTO_URL}/${author.username}/${slug}`,
     Component: Post,
   };
 };
 
 const MorePosts = ({ username, name, number }) => (
   <Card
-    onClick={() => window.open(`${MEDIUM_URL}/${username}/`, '_blank')}
+    onClick={() => window.open(`${DEVTO_URL}/${username}/`, '_blank')}
     p={4}
   >
     <Flex
@@ -117,8 +114,8 @@ const MorePosts = ({ username, name, number }) => (
         </Heading>
       </Box>
       <Heading color="primary" mt={5} textAlign="right">
-        Go to Medium &nbsp;
-        <FontAwesomeIcon name="arrow-right" aria-label="Go to Medium" />
+        Go to DEV.to &nbsp;
+        <FontAwesomeIcon name="arrow-right" aria-label="Go to DEV.to" />
       </Heading>
     </Flex>
   </Card>
@@ -135,40 +132,55 @@ const edgeToArray = data => data.edges.map(edge => edge.node);
 const Writing = () => (
   <StaticQuery
     query={graphql`
-      query MediumPostQuery {
+      query DevPostQuery {
         site {
           siteMetadata {
-            isMediumUserDefined
+            isDevToUserDefined
           }
         }
-        allMediumPost(limit: 7, sort: { fields: createdAt, order: DESC }) {
+        allDevArticles(
+          limit: 7
+          sort: { fields: article___created_at, order: DESC }
+        ) {
           totalCount
           edges {
             node {
-              id
-              uniqueSlug
-              title
-              createdAt(formatString: "MMM YYYY")
-              virtuals {
-                subtitle
-                readingTime
-                previewImage {
-                  imageId
-                }
+              article {
+                id
+                slug
+                title
+                positive_reactions_count
+                comments_count
+                created_at(formatString: "MMM YYYY")
               }
             }
           }
         }
-        author: mediumUser {
-          username
-          name
+        author: devArticles {
+          article {
+            user {
+              name
+              username
+            }
+          }
         }
       }
     `}
-    render={({ allMediumPost, site, author }) => {
-      const posts = edgeToArray(allMediumPost).map(parsePost(author));
+    render={({ allDevArticles, site, author }) => {
+      // these work
+      // console.log("author " + author.article.user.name);
+      // console.log("dev " + allDevArticles.edges[0].node.article.title);
 
-      const diffAmountArticles = allMediumPost.totalCount - posts.length;
+      const posts = edgeToArray(allDevArticles).map(
+        parsePost(author.article.user),
+      );
+
+      // this works too
+      // const post1 = edgeToArray(allDevArticles);
+      // console.log("post1 " + post1[0].article.title); McDonalds
+      // console.log("post1 " + post1[1].article.title); Debug Sat
+
+      const diffAmountArticles = allDevArticles.totalCount - posts.length;
       if (diffAmountArticles > 0) {
         posts.push({
           ...author,
@@ -178,10 +190,9 @@ const Writing = () => (
         });
       }
 
-      const { isMediumUserDefined } = site.siteMetadata;
-
+      const { isDevToUserDefined } = site.siteMetadata;
       return (
-        isMediumUserDefined && (
+        isDevToUserDefined && (
           <Section.Container id="writing" Background={Background}>
             <Section.Header name="Writing" icon="✍️" label="writing" />
             <CardContainer minWidth="300px">

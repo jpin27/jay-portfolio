@@ -38,12 +38,12 @@ const plugins = [
 ];
 
 module.exports = client.getEntries().then(entries => {
-  const { mediumUser } = entries.items.find(getAboutEntry).fields;
+  const { devtoUsername } = entries.items.find(getAboutEntry).fields;
 
   plugins.push({
-    resolve: 'gatsby-source-medium',
+    resolve: 'gatsby-source-dev',
     options: {
-      username: mediumUser || '@medium',
+      username: devtoUsername || 'aicxe',
     },
   });
 
@@ -58,7 +58,7 @@ module.exports = client.getEntries().then(entries => {
 
   return {
     siteMetadata: {
-      isMediumUserDefined: !!mediumUser,
+      isDevToUserDefined: !!devtoUsername,
     },
     plugins,
   };
